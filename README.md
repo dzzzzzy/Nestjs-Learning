@@ -6,7 +6,7 @@
 
 ## 文档
 
-[官方文档](https://docs.nestjs.com/v5/)
+[官方文档](https://docs.nestjs.com)
 
 [中文文档](https://docs.nestjs.cn/)
 
