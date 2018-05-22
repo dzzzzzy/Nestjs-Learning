@@ -2,7 +2,7 @@
 
 ## 框架介绍
 
-Nest 是构建高效，可扩展的 Node.js 服务器端应用程序的框架。 它使用渐进式 JavaScript，使用 TypeScript （保留与纯 JavaScript 的兼容性）构建，并结合了 OOP（面向对象编程）， FP（功能编程）和 FRP（功能反应编程）的元素。
+Nest 是构建高效且可扩展的 Node.js 服务器端应用程序的框架。 它使用 TypeScript （保留与纯 JavaScript 的兼容性）构建，并结合了 OOP（面向对象编程）， FP（功能编程）和 FRP（功能反应编程）的元素。
 
 ### 主要特性
 
