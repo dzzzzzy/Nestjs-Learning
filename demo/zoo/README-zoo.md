@@ -57,12 +57,14 @@ import { ApplicationService } from "application.service";
 
 /**
  * 应用程序控制器，@Controller() 可以指定参数，用于定义类的父路由，如 @Controller("cat")，此时这个类的所有父路由就会成为 /cat
+ *
+ * 被 @Controller() 修饰的类，可以通过其构造函数完成依赖注入，但依赖注入的类必须与当前类属于同一个模块
  */
 @Controller()
 export class ApplicationController {
 
     /**
-     * 构造函数，用于注入这个类的依赖
+     * 构造函数，用于注入这个类的依赖，注入类时，需要使用 @Inject() 修饰符，其参数是被注入的类的类名
      */
     constructor(
         @Inject(ApplicationService) private readonly applicationService: ApplicationService,
@@ -83,6 +85,9 @@ export class ApplicationController {
 ```typescript
 import { Injectable } from "@nestjs/common";
 
+/**
+ * 被 @Injectable() 修饰的类，可以通过其构造函数完成依赖注入，但依赖注入的类必须与当前类属于同一个模块
+ */
 @Injectable()
 export class ApplicationService {
     constructor() { } // 构造函数，一般用于处理依赖注入
@@ -101,11 +106,14 @@ import { ApplicationService } from "application.service";
 
 import { ApplicationController } from "./application.controller";
 
+/**
+ * @Module() 定义一个模块，并管理这个模块的导入集合、控制器集合、提供者集合、导出集合
+ */
 @Module({
-    imports: [],  // 导入其他模块
-    controllers: [ApplicationController],  // 应用程序的所有控制器
-    providers: [ApplicationService],  // 应用程序的所有提供者
-    exports: [], // 可用于导出提供者或模块
+    imports: [],  // 导入其他模块的集合
+    controllers: [ApplicationController],  // 当前模块的控制器集合
+    providers: [ApplicationService],  // 当前模块的提供者集合
+    exports: [], // 导出当前模块的提供者，用于被其他模块调用
 })
 export class ApplicationModule { }
 ```
@@ -117,7 +125,7 @@ import { NestFactory } from "@nestjs/core";
 import { ApplicationModule } from "application.module";
 
 async function bootstrap() {
-    const app = await NestFactory.create(ApplicationModule);  // 创建 Nest Application 实例
+    const app = await NestFactory.create(ApplicationModule);  // 创建应用程序实例
     await app.listen(3000);  // 使用3000端口监听应用程序
 }
 
