@@ -1,4 +1,6 @@
-# 这里有一个使用 Nest 的栗子 🌰
+# 动物园里有什么？
+
+动物园里有大西几！小凶许！小脑斧！梅发怒！小福泥！小海疼！发福蝶！大鸡居！大飞囊！大lai流！强颈怒！大蟒鞋！小白去！鸵寮！大带许！大穷猫！大诺坨！大你鱼！丹鼎货！小乌堆！你都记住了吗？
 
 ## 前言
 
@@ -47,7 +49,7 @@ tsconfig.json       // 文件中指定了用来编译这个项目的根文件和
 tslint.json         // ts 语法检查配置文件
 ```
 
-## Step 3 创建 hello world
+## Step 3 创建 Hello Zoo
 
 `application.controller.ts`
 
@@ -93,7 +95,7 @@ export class ApplicationService {
     constructor() { } // 构造函数，一般用于处理依赖注入
 
     async root() {
-        return "Hello World";
+        return "Hello Zoo";
     }
 }
 ```
