@@ -73,6 +73,13 @@ export class AnimalService {
     }
 
     /**
+     * 查询所有动物
+     */
+    async findAllAnimal(): Promise<Array<Animal>> {
+        return this.animalRepo.find();
+    }
+
+    /**
      * 根据ID查询单个动物信息，如果不存在则抛出404异常
      * @param id 动物ID
      */

@@ -33,4 +33,10 @@ export class AnimalController {
         const data = await this.animalService.findOneAnimal(id);
         return { code: 200, message: "查询动物成功", data };
     }
+
+    @Get()
+    async findAllAnimal(): Promise<Result> {
+        const data = await this.animalService.findAllAnimal();
+        return { code: 200, message: "查询所有动物成功", data };
+    }
 }
