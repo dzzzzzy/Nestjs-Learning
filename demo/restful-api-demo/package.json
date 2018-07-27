@@ -1,10 +1,10 @@
 {
     "name": "zoo",
     "version": "1.0.0",
-    "description": "This is a nestjs demo named zoo.",
-    "main": "server.ts",
+    "description": "This is a nestjs restful api demo.",
+    "main": "main.ts",
     "scripts": {
-        "start": "ts-node -r tsconfig-paths/register src/server.ts",
+        "start": "ts-node -r tsconfig-paths/register src/main.ts",
         "start:dev": "nodemon",
         "start:debug": "nodemon --config nodemon-debug.json",
         "check": "tslint -p tsconfig.json -c tslint.json",
