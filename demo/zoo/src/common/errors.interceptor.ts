@@ -1,6 +1,6 @@
-import { ExecutionContext, HttpException, Injectable, NestInterceptor } from "@nestjs/common";
-import { Observable } from "rxjs";
-import { catchError } from "rxjs/operators";
+import { ExecutionContext, HttpException, Injectable, NestInterceptor } from '@nestjs/common';
+import { Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class ErrorsInterceptor implements NestInterceptor {

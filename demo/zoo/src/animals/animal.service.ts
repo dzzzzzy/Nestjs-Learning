@@ -1,8 +1,8 @@
-import { HttpException, Injectable } from "@nestjs/common";
-import { InjectRepository } from "@nestjs/typeorm";
-import { Repository } from "typeorm";
+import { HttpException, Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 
-import { Animal } from "./animal.entity";
+import { Animal } from './animal.entity';
 
 @Injectable()
 export class AnimalService {
@@ -26,9 +26,13 @@ export class AnimalService {
          *
          * 如果不存在，则将给定实体保存在数据库中
          */
-        const exist = await this.animalRepo.createQueryBuilder("animal").where("animal.name = :name", { name: animal.name }).orWhere("animal.alias = :alias", { alias: animal.alias }).getOne();
+        const exist = await this.animalRepo
+            .createQueryBuilder('animal')
+            .where('animal.name = :name', { name: animal.name })
+            .orWhere('animal.alias = :alias', { alias: animal.alias })
+            .getOne();
         if (exist) {
-            throw new HttpException("该动物已被创建", 409);
+            throw new HttpException('该动物已被创建', 409);
         }
         // 插入数据时，删除 id，以避免请求体内传入 id
         delete animal.id;

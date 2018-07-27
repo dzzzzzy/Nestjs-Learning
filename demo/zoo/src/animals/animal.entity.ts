@@ -1,12 +1,12 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity("animal")
+@Entity('animal')
 export class Animal {
     /**
      * 自增主键
      */
     @PrimaryGeneratedColumn({
-        comment: "自增ID"
+        comment: '自增ID'
     })
     id: number;
 
@@ -14,7 +14,7 @@ export class Animal {
      * 唯一约束的动物名称字段
      */
     @Column({
-        comment: "动物名称",
+        comment: '动物名称',
         unique: true
     })
     name: string;
@@ -23,7 +23,7 @@ export class Animal {
      * 唯一约束的动物名称字段
      */
     @Column({
-        comment: "动物别名",
+        comment: '动物别名',
         unique: true
     })
     alias: string;

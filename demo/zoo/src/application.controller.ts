@@ -1,6 +1,6 @@
-import { Controller, Get, Inject } from "@nestjs/common";
+import { Controller, Get, Inject } from '@nestjs/common';
 
-import { ApplicationService } from "./application.service";
+import { ApplicationService } from './application.service';
 
 /**
  * 应用程序控制器，@Controller() 可以指定参数，用于定义类的父路由，如 @Controller("cat")，此时这个类的所有父路由就会成为 /cat

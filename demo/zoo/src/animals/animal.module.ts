@@ -1,9 +1,9 @@
-import { Module } from "@nestjs/common";
-import { TypeOrmModule } from "@nestjs/typeorm";
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { AnimalController } from "./animal.controller";
-import { Animal } from "./animal.entity";
-import { AnimalService } from "./animal.service";
+import { AnimalController } from './animal.controller';
+import { Animal } from './animal.entity';
+import { AnimalService } from './animal.service';
 
 @Module({
     imports: [TypeOrmModule.forFeature([Animal])],

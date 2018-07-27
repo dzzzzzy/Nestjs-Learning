@@ -1,11 +1,11 @@
-import { Module } from "@nestjs/common";
-import { APP_INTERCEPTOR } from "@nestjs/core";
-import { TypeOrmModule } from "@nestjs/typeorm";
+import { Module } from '@nestjs/common';
+import { APP_INTERCEPTOR } from '@nestjs/core';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { AnimalModule } from "./animals/animal.module";
-import { ApplicationController } from "./application.controller";
-import { ApplicationService } from "./application.service";
-import { ErrorsInterceptor } from "./common/errors.interceptor";
+import { AnimalModule } from './animals/animal.module';
+import { ApplicationController } from './application.controller';
+import { ApplicationService } from './application.service';
+import { ErrorsInterceptor } from './common/errors.interceptor';
 
 /**
  * @Module() 定义一个模块，并管理这个模块的导入集合、控制器集合、提供者集合、导出集合
