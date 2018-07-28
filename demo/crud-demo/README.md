@@ -1,4 +1,4 @@
-# Nestjs Restful Api Demo
+# Nestjs CRUD Demo
 
 ## 先决条件
 
