@@ -42,7 +42,7 @@ and more...
 
 ## Demo
 
-- [Nestjs Restful Api Demo](./demo/restful-api-demo/README.md)
+- [CRUD Demo](./demo/crud-demo/README.md)
 
 ----------
 
