@@ -1,43 +1,69 @@
+
 {
-    "extends": "tslint:latest",
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {
+        "no-unused-expression": true
+    },
     "rules": {
         "array-type": [
             true,
-            "generic"
+            "array"
         ],
-        "ban-types": [
-            true,
-            [
-                "Object",
-                "Avoid using the `Object` type. Did you mean `object`?"
-            ],
-            [
-                "Boolean",
-                "Avoid using the `Boolean` type. Did you mean `boolean`?"
-            ],
-            [
-                "Number",
-                "Avoid using the `Number` type. Did you mean `number`?"
-            ],
-            [
-                "String",
-                "Avoid using the `String` type. Did you mean `string`?"
+        "ban-types": {
+            "options": [
+                [
+                    "Object",
+                    "Avoid using the `Object` type. Did you mean `object`?"
+                ],
+                [
+                    "Function",
+                    "Avoid using the `Function` type. Prefer a specific function type, like `() => void`, or use `ts.AnyFunction`."
+                ],
+                [
+                    "Boolean",
+                    "Avoid using the `Boolean` type. Did you mean `boolean`?"
+                ],
+                [
+                    "Number",
+                    "Avoid using the `Number` type. Did you mean `number`?"
+                ],
+                [
+                    "String",
+                    "Avoid using the `String` type. Did you mean `string`?"
+                ]
             ]
-        ],
+        },
         "class-name": true,
         "comment-format": [
             true,
             "check-space"
         ],
-        "curly": true,
+        "curly": [
+            true,
+            "ignore-same-line"
+        ],
         "indent": [
             true,
             "spaces",
             4
         ],
-        "interface-name": [
+        "max-line-length": [
             true,
-            "never-prefix"
+            150
+        ],
+        "quotemark": [
+            true,
+            "single"
+        ],
+        "semicolon": [
+            true,
+            "always"
+        ],
+        "interface-name": [
+            false
         ],
         "interface-over-type-literal": true,
         "jsdoc-format": true,
@@ -47,7 +73,10 @@
         "no-internal-module": true,
         "no-null-keyword": true,
         "no-switch-case-fall-through": true,
-        "no-trailing-whitespace": true,
+        "no-trailing-whitespace": [
+            true,
+            "ignore-template-strings"
+        ],
         "no-var-keyword": true,
         "object-literal-shorthand": true,
         "one-line": [
@@ -56,15 +85,11 @@
             "check-whitespace"
         ],
         "prefer-const": true,
-        "quotemark": [
+        "prefer-conditional-expression": [
             true,
-            "double",
-            "avoid-escape"
+            "check-else-if"
         ],
-        "semicolon": [
-            true,
-            "always"
-        ],
+        "prefer-for-of": true,
         "space-within-parens": true,
         "triple-equals": true,
         "typedef-whitespace": [
@@ -75,13 +100,6 @@
                 "parameter": "nospace",
                 "property-declaration": "nospace",
                 "variable-declaration": "nospace"
-            },
-            {
-                "call-signature": "onespace",
-                "index-signature": "onespace",
-                "parameter": "onespace",
-                "property-declaration": "onespace",
-                "variable-declaration": "onespace"
             }
         ],
         "whitespace": [
@@ -89,7 +107,6 @@
             "check-branch",
             "check-decl",
             "check-operator",
-            "check-module",
             "check-separator",
             "check-type"
         ],
@@ -120,13 +137,11 @@
         "no-submodule-imports": false,
         "no-var-requires": false,
         "ordered-imports": false,
-        "prefer-conditional-expression": false,
         "radix": false,
         "trailing-comma": false,
         "align": false,
-        "eofline": true,
-        "max-line-length": false,
-        "no-consecutive-blank-lines": true,
+        "eofline": false,
+        "no-consecutive-blank-lines": false,
         "space-before-function-paren": false,
         "ban-comma-operator": false,
         "max-classes-per-file": false,
@@ -147,10 +162,6 @@
         "no-bom": false,
         "boolean-trivia": false,
         "debug-assert": false,
-        "no-unused-expression": [
-            true,
-            "allow-fast-null-checks"
-        ],
-        "prefer-for-of": false
+        "no-unused-expression": false
     }
 }

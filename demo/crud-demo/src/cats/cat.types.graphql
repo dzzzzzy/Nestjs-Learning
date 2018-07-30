@@ -1,0 +1,31 @@
+type Query {
+    findOneCat(id: Int!): CatReult
+}
+
+type Mutation {
+    createCat(cat: CatInput!): CommonResult
+    deleteCat(id: Int!): CommonResult
+    updateCat(id: Int!, cat: CatInput): CommonResult
+}
+
+type CommonResult {
+    code: Int
+    message: String
+}
+
+type CatReult {
+    code: Int
+    message: String
+    data: CatInfo
+}
+
+type CatInfo {
+    id: Int
+    nickname: String
+    species: String
+}
+
+input CatInput {
+    nickname: String
+    species: String
+}

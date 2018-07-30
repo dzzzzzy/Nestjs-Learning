@@ -1,4 +1,4 @@
-# Nest.js 学习计划
+# Nest.js 教程
 
 ## 框架介绍
 
@@ -40,9 +40,9 @@ and more...
 
 ----------
 
-## 栗子 🌰
+## Demo
 
-- [动物园里有什么？](./demo/zoo/README-zoo.md)
+- [CRUD Demo](./demo/crud-demo/README.md)
 
 ----------
 
