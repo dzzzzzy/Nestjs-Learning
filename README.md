@@ -6,11 +6,13 @@ Nest 是构建高效且可扩展的 Node.js 服务器端应用程序的框架。
 
 ### 主要特性
 
-1. 完美支持 Typescript
-2. 面向 AOP 编程
-3. 支持 typeorm
-4. Node.js 版的 spring
-5. 构建微服务应用
+- 完美支持 Typescript
+- 模块化开发
+- 内置 IOC 容器
+- 轻松编写 AOP 代码
+- 支持 TypeORM
+- 构建微服务应用
+- ......
 
 ### Github: [Nest](https://github.com/nestjs/nest) 🎁
 
@@ -33,7 +35,7 @@ Nest 是构建高效且可扩展的 Node.js 服务器端应用程序的框架。
   - 📖 [官方文档](https://graphql.org)
   - 📖 [中文文档](https://graphql.cn)
   - 浏览器内置 IDE [GraphiQL](https://github.com/graphql/graphiql)
-- [TypeOrm](https://github.com/typeorm/typeorm)
+- [TypeORM](https://github.com/typeorm/typeorm)
   - 📖 [官方文档](http://typeorm.io)
 
 and more...
@@ -43,6 +45,10 @@ and more...
 ## Demo
 
 - [CRUD Demo](./demo/crud-demo/README.md)
+
+## TypeORM
+
+- [分页查询](./typeorm/pagination/pagination.md)
 
 ----------
 
