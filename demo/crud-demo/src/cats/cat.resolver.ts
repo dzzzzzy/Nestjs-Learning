@@ -19,9 +19,6 @@ export class CatResolver {
      * context：这是特定查询中所有解析器共享的对象，用于包含每个请求的状态，包括身份验证信息、数据加载器实例以及解析查询时应考虑的任何其他内容。一般情况下，不使用。
      * info：此参数仅应在高级情况下使用，但它包含有关查询执行状态的信息，包括字段名、从根到字段的路径等。一般情况下，不使用。
      *
-     * FIXME: 在使用 fastify-graphql 包时，req 参数目前无法使用！！！
-     *
-     * apollo-server 官方后期可能会对 fastify 做出支持，只能等官方的消息了。。。
      */
 
     @Mutation('createCat')
