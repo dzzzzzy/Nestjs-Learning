@@ -54,4 +54,6 @@ createConnection({
     console.table(userInfoTableWithOL);
 
     console.table(userInfoTableWithST);
+
+    connection.close();
 });
