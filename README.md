@@ -1,6 +1,6 @@
 # Nest.js 教程
 
-在开始学习之前，可以 start ⭐️ 本仓库，以便接收我的更新通知 😄
+在开始学习之前，可以 star ⭐️ 本仓库，以便接收我的更新通知 😄
 
 如有不解之惑，或是想要更多的详细教程，可以在 [New Issues](https://github.com/dzzzzzy/Nestjs-Learning/issues/new) 中写下你的问题或需求。
 
