@@ -4,7 +4,7 @@ import * as bodyParser from 'body-parser';
 import { fastifyGraphiQL, fastifyGraphQL } from 'fastify-graphql-middleware';
 
 import { AppModule } from './app.module';
-import { graphqlConfig } from './configurations';
+import { graphqlConfig } from './configuration';
 
 async function bootstrap() {
     const app = await NestFactory.create(AppModule, new FastifyAdapter());  // 创建应用程序实例，此时所有被 AppModule 导入的其他模块的所有实例都会被加载

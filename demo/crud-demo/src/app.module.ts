@@ -2,11 +2,11 @@ import { Inject, Module } from '@nestjs/common';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { GraphQLFactory, GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { CatModule } from 'cats/cat.module';
-import { ErrorsInterceptor } from 'common/errors.interceptor';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { CatModule } from './cat/cat.module';
+import { ErrorsInterceptor } from './common/errors.interceptor';
 
 /**
  * @Module() 定义一个模块，并管理这个模块的导入集合、控制器集合、提供者集合、导出集合

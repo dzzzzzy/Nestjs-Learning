@@ -369,7 +369,6 @@ export class CatResolver {
 
     @Query('findOneCat')
     async findOneCat(req, body: { id: number }): Promise<Result> {
-        console.log(req);
         const data = await this.catService.findOneCat(body.id);
         return { code: 200, message: '查询成功', data };
     }
