@@ -1,12 +1,14 @@
 # Nest.js 教程
 
-在开始学习之前，可以 start ⭐️ 本仓库，以便接收我的更新通知 😄
+如果喜欢本教程请点击右上角的 star 🌟，想订阅本教程请点击右上角 watch 👀
 
 如有不解之惑，或是想要更多的详细教程，可以在 [New Issues](https://github.com/dzzzzzy/Nestjs-Learning/issues/new) 中写下你的问题或需求。
 
 ## 框架介绍
 
-Nest 是构建高效且可扩展的 Node.js 服务器端应用程序的框架。它使用 TypeScript （保留与纯 JavaScript 的兼容性）构建，并结合了 OOP（面向对象编程）， FP（函数式编程）和 FRP（函数式反应型编程）的元素。
+Nest 是构建高效，可扩展的 Node.js Web 应用程序的框架。 它使用现代的 JavaScript 或 TypeScript（保留与纯 JavaScript 的兼容性），并结合 OOP（面向对象编程），FP（函数式编程）和 FRP（函数响应式编程）的元素。
+
+在底层，Nest 使用了 [Express](https://github.com/expressjs/express)，但也提供了与其他各种库的兼容，例如 [Fastify](https://github.com/fastify/fastify)，可以方便地使用各种可用的第三方插件。
 
 ### 主要特性
 
@@ -33,14 +35,14 @@ Nest 是构建高效且可扩展的 Node.js 服务器端应用程序的框架。
 - [NodeJS](https://nodejs.org)
   - [v10文档(最新)](https://nodejs.org/dist/latest-v10.x/docs/api/)
 - [Typescript](https://www.typescriptlang.org)
-  - 📖 [官方文档](https://www.typescriptlang.org/docs/home.html)
-  - 📖 [中文文档](https://www.tslang.cn/docs/home.html)
+  - 📚 [官方文档](https://www.typescriptlang.org/docs/home.html)
+  - 📚 [中文文档](https://www.tslang.cn/docs/home.html)
 - [GraphQL](https://github.com/graphql/graphql-js)
-  - 📖 [官方文档](https://graphql.org)
-  - 📖 [中文文档](https://graphql.cn)
+  - 📚 [官方文档](https://graphql.org)
+  - 📚 [中文文档](https://graphql.cn)
   - 浏览器内置 IDE [GraphiQL](https://github.com/graphql/graphiql)
 - [TypeORM](https://github.com/typeorm/typeorm)
-  - 📖 [官方文档](http://typeorm.io)
+  - 📚 [官方文档](http://typeorm.io)
 
 and more...
 
