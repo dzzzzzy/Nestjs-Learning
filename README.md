@@ -51,6 +51,7 @@ and more...
 ## Demo
 
 - [CRUD Demo](./demo/crud-demo/README.md)
+- [GraphQL-v2.x Demo](./demo/apollo-graphql-v2/README.md)
 
 ## TypeORM 问题汇总
 
