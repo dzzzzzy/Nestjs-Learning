@@ -1,7 +1,7 @@
 {
-    "name": "zoo",
+    "name": "nestjs-crud-demo",
     "version": "1.0.0",
-    "description": "This is a nestjs restful api demo.",
+    "description": "This is a nestjs crud demo.",
     "main": "main.ts",
     "scripts": {
         "start": "ts-node -r tsconfig-paths/register src/main.ts",

@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Inject, Param, Post, Put } from '@nestjs/common';
-import { Result } from 'common/result.interface';
 
+import { Result } from '../common/result.interface';
 import { Cat } from './cat.entity';
 import { CatService } from './cat.service';
 

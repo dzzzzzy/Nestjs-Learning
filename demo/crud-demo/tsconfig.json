@@ -1,24 +1,30 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
-        "declaration": false,
-        "noImplicitAny": false,
-        "removeComments": true,
-        "noLib": false,
-        "allowSyntheticDefaultImports": true,
+        "allowJs": false,
+        "baseUrl": "./",
+        "declaration": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "target": "es6",
-        "sourceMap": true,
-        "allowJs": true,
-        "outDir": "./dist",
-        "baseUrl": "./src"
+        "module": "commonjs",
+        "noImplicitAny": false,
+        "noLib": false,
+        "lib": [
+            "es2017",
+            "esnext.asynciterable"
+        ],
+        "noUnusedLocals": false,
+        "removeComments": true,
+        "strict": false,
+        "strictPropertyInitialization": false,
+        "target": "es2017",
+        "outDir": "dist"
     },
     "include": [
-        "src/**/*"
+        "src/*.ts",
+        "src/**/*.ts"
     ],
     "exclude": [
         "node_modules",
-        "**/*.spec.ts"
+        "test"
     ]
 }
