@@ -54,7 +54,7 @@ and more...
 
 ## TypeORM 问题汇总
 
-- [分页查询问题](./typeorm/pagination/pagination.md)
+- [分页查询问题](./issues/typeorm/pagination/pagination.md)
 
 ----------
 
