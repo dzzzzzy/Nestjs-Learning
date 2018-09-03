@@ -50,8 +50,8 @@ and more...
 
 ## Demo
 
-- [CRUD Demo](./demo/crud-demo/README.md)
-- [GraphQL-v2.x Demo](./demo/apollo-graphql-v2/README.md)
+- [CRUD Restful API Demo](./demo/rest-api/README.md)
+- [GraphQL API Demo](./demo/graphql-api/README.md)
 
 ## TypeORM 问题汇总
 

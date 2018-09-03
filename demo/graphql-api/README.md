@@ -1,4 +1,4 @@
-# Apollo-GraphQL-v2
+# GraphQL API Demo
 
 ## 启动
 

@@ -1,6 +1,6 @@
-import { Inject, Module } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { APP_INTERCEPTOR } from '@nestjs/core';
-import { GraphQLFactory, GraphQLModule } from '@nestjs/graphql';
+import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AppController } from './app.controller';
@@ -23,8 +23,4 @@ import { ErrorsInterceptor } from './common/errors.interceptor';
     ],  // 当前模块的提供者集合
     exports: [], // 导出当前模块的提供者，用于被其他模块调用
 })
-export class AppModule {
-    constructor(
-        @Inject(GraphQLFactory) private readonly graphQLFactory: GraphQLFactory,
-    ) { }
-}
+export class AppModule { }
