@@ -43,8 +43,7 @@ Nest 是构建高效，可扩展的 Node.js Web 应用程序的框架。 它使�
   - 浏览器内置 IDE [GraphiQL](https://github.com/graphql/graphiql)
 - [TypeORM](https://github.com/typeorm/typeorm)
   - 📚 [官方文档](http://typeorm.io)
-
-and more...
+- ......
 
 ----------
 
