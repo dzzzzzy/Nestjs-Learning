@@ -12,12 +12,12 @@ Nest 是构建高效，可扩展的 Node.js Web 应用程序的框架。 它使�
 
 ### 主要特性
 
-- 完美支持 Typescript
-- 模块化开发
-- 内置 IOC 容器
-- 轻松编写 AOP 代码
-- 支持 TypeORM
-- 构建微服务应用
+- 使用 Typescript，强类型语言、类型推断机制、编译期类型检查等，为后端开发和维护提供了很好的支持
+- 模块化开发，让应用程序更容易分层，提供了易于使用的模块化管理机制
+- 内置 IOC 容器，大量使用依赖注入，开发更便捷、更高效
+- 轻松编写 AOP 代码，面向切面编程，轻松实现日志、拦截器、过滤器等功能
+- 支持 TypeORM，最好的 Typescript ORM 框架，轻松编写 DAO 层的各类逻辑
+- 轻松构建 MVC、API、websocket、微服务、等系统
 - ......
 
 ### 框架 Github 地址: [Nest](https://github.com/nestjs/nest) 🎁
