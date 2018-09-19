@@ -11,9 +11,9 @@ export class CatService {
     ) { }
 
     /**
-     * 创建猫猫
+     * 创建
      *
-     * @param cat 猫猫实体对象
+     * @param cat Cat 实体对象
      */
     async createCat(cat: Cat): Promise<Cat> {
         /**
@@ -33,9 +33,9 @@ export class CatService {
     }
 
     /**
-     * 删除猫猫
+     * 删除
      *
-     * @param id 猫猫ID
+     * @param id ID
      */
     async deleteCat(id: number): Promise<void> {
         await this.findOneById(id);
@@ -43,9 +43,9 @@ export class CatService {
     }
 
     /**
-     * 更新猫猫
+     * 更新
      *
-     * @param cat 猫猫实体对象
+     * @param cat Cat 实体对象
      */
     async updateCat(id: number, cat: Cat): Promise<void> {
         const existCat = await this.findOneById(id);
@@ -56,17 +56,17 @@ export class CatService {
     }
 
     /**
-     * 根据猫猫ID查询猫猫
+     * 根据ID查询
      *
-     * @param id 猫猫ID
+     * @param id ID
      */
     async findOneCat(id: number): Promise<Cat> {
         return this.findOneById(id);
     }
 
     /**
-     * 根据ID查询单个猫猫信息，如果不存在则抛出404异常
-     * @param id 猫猫ID
+     * 根据ID查询单个信息，如果不存在则抛出404异常
+     * @param id ID
      */
     private async findOneById(id: number): Promise<Cat> {
         const catInfo = await this.catRepo.findOne(id);

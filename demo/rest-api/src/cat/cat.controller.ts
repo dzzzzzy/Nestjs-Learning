@@ -11,8 +11,8 @@ export class CatController {
     ) { }
 
     @Post()
-    async createCat(@Body() Cat: Cat): Promise<Result> {
-        await this.catService.createCat(Cat);
+    async createCat(@Body() cat: Cat): Promise<Result> {
+        await this.catService.createCat(cat);
         return { code: 200, message: '创建成功' };
     }
 
@@ -23,8 +23,8 @@ export class CatController {
     }
 
     @Put(':id')
-    async updateCat(@Param('id') id: number, @Body() Cat: Cat): Promise<Result> {
-        await this.catService.updateCat(id, Cat);
+    async updateCat(@Param('id') id: number, @Body() cat: Cat): Promise<Result> {
+        await this.catService.updateCat(id, cat);
         return { code: 200, message: '更新成功' };
     }
 
