@@ -40,28 +40,28 @@ import { Controller, Get, Post, Body, Put, Param, Delete } from '@nestjs/common'
 @Controller('cats')
 export class CatsController {
   @Post()
-  create(@Body() createCatDto) {
+  async create(@Body() createCatDto: CreateCatDto) {
     return 'This action adds a new cat';
   }
 
-  @Get()
-  findAll(@Query() query) {
-    return `This action returns all cats (limit: ${query.limit} items)`;
-  }
-
-  @Get(':id')
-  findOne(@Param('id') id) {
-    return `This action returns a #${id} cat`;
+  @Delete(':id')
+  async remove(@Param('id') id) {
+    return `This action removes a #${id} cat`;
   }
 
   @Put(':id')
-  update(@Param('id') id, @Body() updateCatDto) {
+  async update(@Param('id') id, @Body() updateCatDto: UpdateCatDto) {
     return `This action updates a #${id} cat`;
   }
 
-  @Delete(':id')
-  remove(@Param('id') id) {
-    return `This action removes a #${id} cat`;
+  @Get(':id')
+  async findOne(@Param('id') id) {
+    return `This action returns a #${id} cat`;
+  }
+
+  @Get()
+  async findAll(@Query() query) {
+    return `This action returns all cats (limit: ${query.limit} items)`;
   }
 }
 
@@ -97,7 +97,7 @@ Nest 也支持基于模式的路由。例如，星号用作通配符，将匹配
 
 ```typescript
 @Get('ab*cd')
-findAll() {
+async findAll() {
   return 'This route uses a wildcard';
 }
 ```
@@ -111,7 +111,7 @@ findAll() {
 ```typescript
 @Post()
 @HttpCode(204)
-create() {
+async create() {
   return 'This action adds a new cat';
 }
 ```
@@ -123,7 +123,7 @@ create() {
 ```typescript
 @Post()
 @Header('Cache-Control', 'none')
-create() {
+async create() {
   return 'This action adds a new cat';
 }
 ```
