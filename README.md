@@ -47,6 +47,18 @@ Nest 是构建高效，可扩展的 Node.js Web 应用程序的框架。 它使�
 
 ----------
 
+## Nest 学习手册
+
+- 基础
+  - [Controller](./docs/controller.md)
+  - Provider
+  - Module
+  - Middleware
+  - Exception Filter
+  - Pipe
+  - Guard
+  - Interceptor
+
 ## Demo
 
 - [CRUD Restful API Demo](./demo/rest-api/README.md)
@@ -54,7 +66,7 @@ Nest 是构建高效，可扩展的 Node.js Web 应用程序的框架。 它使�
 
 ## TypeORM 问题汇总
 
-- [分页查询问题](./issues/typeorm/pagination/pagination.md)
+- [分页查询问题](./issues/typeorm/pagination/README.md)
 
 ----------
 
