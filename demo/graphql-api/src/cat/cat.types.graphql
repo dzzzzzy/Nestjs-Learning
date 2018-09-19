@@ -1,0 +1,40 @@
+type Query {
+    # #号代表代码里的注释，" "/""" """是 graphql 文档中的注释，" "是单行，""" """是多行
+    "查询一个猫猫"
+    findOneCat(id: Int!): CatResponse
+    findCats: CatsResponse
+}
+
+type Mutation {
+    createCat(cat: CatInput!): CommonResponse
+    deleteCat(id: Int!): CommonResponse
+    updateCat(id: Int!, cat: CatInput): CommonResponse
+}
+
+type CommonResponse {
+    code: Int
+    message: String
+}
+
+type CatResponse {
+    code: Int
+    message: String
+    data: Cat
+}
+
+type CatsResponse {
+    code: Int
+    message: String
+    data: [Cat]
+}
+
+type Cat {
+    id: Int
+    nickname: String
+    species: String
+}
+
+input CatInput {
+    nickname: String
+    species: String
+}
