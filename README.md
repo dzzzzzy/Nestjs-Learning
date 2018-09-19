@@ -51,7 +51,7 @@ Nest 是构建高效，可扩展的 Node.js Web 应用程序的框架。 它使�
 
 - 基础
   - [Controller](./docs/controller.md)
-  - Provider
+  - [Provider](./docs/provider.md)
   - Module
   - Middleware
   - Exception Filter
