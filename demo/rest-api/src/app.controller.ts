@@ -18,7 +18,7 @@ export class AppController {
     ) { }
 
     /**
-     * @Get() 可以指定参数，用于定义方法路由，如 @Get(":id")，此时这个方法路由就会成为 /cat/:id，即查询指定ID的猫猫
+     * @Get() 可以指定参数，用于定义方法路由，如 @Get(":id")，此时这个方法路由就会成为 /cat/:id，即查询指定ID的 Cat
      */
     @Get()
     async root() {
