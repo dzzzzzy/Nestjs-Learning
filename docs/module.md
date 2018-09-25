@@ -114,8 +114,78 @@ export class CoreModule {}
 
 如果你必须在很多地方都导入相同的模块，这会出现大量的冗余。但是 Nest 将提供者封装在模块范围内，如果不导入模块，就无法在其他地方使用他们导出的提供者。但是有时候，你可能只是想提供一组随时可用的提供者，例如：`helpers`、`database connection` 等等。针对这种特殊情况，Nest 提供了一个很强大的功能 —— **全局模块**，全局模块一旦被导入到根模块，在其他所有模块中即可轻松的使用这个全局模块导出的提供者，而且也不用在其他模块导入这个全局模块。
 
+将一个模块定义为全局模块，只需要在类上额外增加一个注解 `@Global()` 即可，示例：
+
+```typescript
+import { Module, Global } from '@nestjs/common';
+
+@Global()
+@Module({
+  imports: [],
+  controllers: [],
+  providers: [],
+  exports: []
+})
+export class CatsModule {}
+```
+
 > 注意：Nest 中只能定义一个全局模块！
 >
 > 将所有东西都放在全局模块内是一个不好的决定，全局模块只是用于减少必要的文件数量，`imports` 仍然是使模块 API 透明的最佳方式。
 
-## TODO: 动态模块
+## 动态模块
+
+Nest 模块系统具有一个称为动态模块的特性。他能够让我们创建可定制的模块，当导入模块并向其传入某些选项参数，这个模块根据这些选项参数来动态的创建不同特性的模块，这种通过导入时传入参数并动态创建模块的特性称为 **动态模块**。
+
+下面以一个数据库模块来演示动态模块的使用：
+
+```typescript
+import { Module, DynamicModule } from '@nestjs/common';
+import { createDatabaseProviders } from './database.providers';
+import { Connection } from './connection.provider';
+
+@Module({
+  providers: [Connection],
+})
+export class DatabaseModule {
+  static forRoot(entities = [], options?): DynamicModule {
+    const providers = createDatabaseProviders(options, entities);
+    return {
+      module: DatabaseModule,
+      providers: providers,
+      exports: providers,
+    };
+  }
+}
+```
+
+默认情况下，该模块定义了 `Connection` 提供者，但是根据传递的 options(选项)和 entities(实体)，他还导出了提供者，例如存储库。事实上，动态模块扩展了基本模块元数据。当我们需要动态注册提供者时，这一重要功能非常有用。然后可以通过以下方式导入数据库模块：
+
+```typescript
+import { Module } from '@nestjs/common';
+import { DatabaseModule } from './database/database.module';
+import { User } from './users/entities/user.entity';
+
+@Module({
+  imports: [
+    DatabaseModule.forRoot([User]),
+  ],
+})
+export class ApplicationModule {}
+```
+
+如果需要将这个动态模块导出时，可以省略函数调用部分：
+
+```typescript
+import { Module } from '@nestjs/common';
+import { DatabaseModule } from './database/database.module';
+import { User } from './users/entities/user.entity';
+
+@Module({
+  imports: [
+    DatabaseModule.forRoot([User]),
+  ],
+  exports: [DatabaseModule]
+})
+export class ApplicationModule {}
+```
