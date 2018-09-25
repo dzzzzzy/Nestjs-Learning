@@ -1,8 +1,8 @@
-# Nest 核心功能 —— Provider
+# Nest 基础功能 —— Provider
 
-什么是 `Provider`？ 语义化翻译就是 **提供者**，在 `Nest` 中，除了控制器以外，几乎所有的东西都可以被视为提供者 —— `service`、`repository`、`factory`、`helper` 等等。他们都可以通过构造函数注入依赖关系，也就是说，他们可以彼此创建各种关系。但是事实上，提供者只不过是一个用 `@projective()` 注解的简单类。
+什么是 `Provider`？ 语义化翻译就是 **提供者**，在 `Nest` 中，除了控制器以外，几乎所有的东西都可以被视为提供者 —— `service`、`repository`、`factory`、`helper` 等等。他们都可以通过构造函数注入依赖关系，也就是说，他们可以彼此创建各种关系。但是事实上，提供者只不过是一个用 `@Injectable()` 注解的简单类。
 
-在上一章中，我们构建了一个简单的 `CatsController`。控制器应处理HTTP请求，并将更复杂的任务委托给 **service**。
+在上一节中，我们构建了一个简单的 `CatsController`。控制器应处理HTTP请求，并将更复杂的任务委托给 **service**。
 
 > 注意：由于 `Nest` 能够以更面向对象的方式设计和组织依赖关系，所以强烈建议大家在开发时遵循 **SOLID** 原则。
 
@@ -88,3 +88,5 @@ export class CatsController {
   }
 }
 ```
+
+> 下一节：Nest 基础功能 —— [Module](./module.md)

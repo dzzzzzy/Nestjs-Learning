@@ -1,4 +1,4 @@
-# Nest 核心功能 —— Controller
+# Nest 基础功能 —— Controller
 
 什么是 `Controller`？语义化翻译就是 **控制器**，它负责处理传入的请求并将响应结果返回给客户端。
 
@@ -127,3 +127,5 @@ async create() {
   return 'This action adds a new cat';
 }
 ```
+
+> 下一节：Nest 基础功能 —— [Provider](./provider.md)

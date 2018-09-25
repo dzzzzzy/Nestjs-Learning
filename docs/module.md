@@ -1,4 +1,4 @@
-# Nest 核心功能 —— Module
+# Nest 基础功能 —— Module
 
 Nest 主要特性中的模块化开发，就源自与此。Nest 使用 `Module` 来组织应用程序结构，每个应用程序至少有一个模块，即根模块。根模块是 Nest 开始排列应用程序树的地方。事实上，根模块可能是应用程序中唯一的模块，尤其是当应用程序很小时。然而，对于大型应用来说，这是没有意义的。在大多数情况下，您将有很多模块，每个模块都有一组与其密切相关的功能。
 
@@ -189,3 +189,5 @@ import { User } from './users/entities/user.entity';
 })
 export class ApplicationModule {}
 ```
+
+> 下一节：Nest 基础功能 —— [NestFactory](./nest-factory.md)
