@@ -1,0 +1,33 @@
+{
+    "name": "easy-post",
+    "version": "1.0.0",
+    "description": "Easy post system.",
+    "main": "main.ts",
+    "scripts": {
+        "start": "ts-node -r tsconfig-paths/register src/main.ts",
+        "start:watch": "nodemon",
+        "debug": "node --inspect-brk -r ts-node/register src/main.ts",
+        "debug:watch": "nodemon --config nodemon-debug.json",
+        "check": "tslint -p tsconfig.json -c tslint.json",
+        "fix": "tslint -p tsconfig.json -c tslint.json --fix"
+    },
+    "author": "dzzzzzy",
+    "license": "MIT",
+    "dependencies": {
+        "@nestjs/common": "^5.3.9",
+        "@nestjs/core": "^5.3.10",
+        "@nestjs/typeorm": "^5.2.2",
+        "pg": "^7.4.3",
+        "reflect-metadata": "^0.1.12",
+        "rxjs": "^6.3.3",
+        "typeorm": "^0.2.7",
+        "typescript": "^3.0.3"
+    },
+    "devDependencies": {
+        "@types/node": "^10.11.0",
+        "nodemon": "^1.18.4",
+        "ts-node": "^7.0.1",
+        "tsconfig-paths": "^3.6.0",
+        "tslint": "^5.11.0"
+    }
+}
