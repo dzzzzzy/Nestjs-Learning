@@ -10,8 +10,8 @@ export class PostController {
         @Inject(PostService) private readonly postService: PostService
     ) { }
 
-    @UseGuards(AuthGuard())
     @Get()
+    @UseGuards(AuthGuard())
     async findAll(): Promise<Post[]> {
         return await this.postService.findAll();
     }

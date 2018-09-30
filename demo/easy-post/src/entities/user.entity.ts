@@ -18,4 +18,9 @@ export class User {
 
     @OneToMany(type => Post, post => post.user)
     posts: Post[];
+
+    @Column({
+        default: 'regular'
+    })
+    role: string;
 }
