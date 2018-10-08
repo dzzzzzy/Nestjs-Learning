@@ -63,8 +63,9 @@ Nest 是构建高效，可扩展的 Node.js Web 应用程序的框架。 它使�
 
 ## Demo
 
-- [CRUD Restful API Demo](./demo/rest-api/README.md)
-- [GraphQL API Demo](./demo/graphql-api/README.md)
+- [CRUD Restful API Demo](./demo/rest-api/README.md) Restful 风格的增删改查示例项目。
+- [GraphQL API Demo](./demo/graphql-api/README.md) GraphQL 风格的增删改查示例项目，包含简单的 GraphQL 订阅功能。
+- [easy-post](./demo/easy-post/README.md) 便利贴，包含用户登录注册，用户授权、用户认证、帖子管理、用户管理等功能。
 
 ## TypeORM 问题汇总
 
