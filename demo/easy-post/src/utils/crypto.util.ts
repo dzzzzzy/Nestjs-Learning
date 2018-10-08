@@ -9,7 +9,7 @@ export class CryptoUtil {
      *
      * @param password 登录密码
      */
-    async encryptPassword(password: string): Promise<string> {
+    encryptPassword(password: string): string {
         return createHash('sha256').update(password).digest('hex');
     }
 
@@ -19,8 +19,8 @@ export class CryptoUtil {
      * @param password 登录密码
      * @param encryptedPassword 加密后的密码
      */
-    async checkPassword(password: string, encryptedPassword): Promise<boolean> {
-        const currentPass = await this.encryptPassword(password);
+    checkPassword(password: string, encryptedPassword): boolean {
+        const currentPass = this.encryptPassword(password);
         if (currentPass === encryptedPassword) {
             return true;
         }

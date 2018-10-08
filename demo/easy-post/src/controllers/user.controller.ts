@@ -1,8 +1,11 @@
-import { Body, Controller, Inject, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Inject, Param, Post, Put, UseGuards } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 
 import { AuthService } from '../auth/auth.service';
 import { Result } from '../common/result.interface';
+import { Roles } from '../decorators/roles.decorator';
 import { User } from '../entities/user.entity';
+import { RolesGuard } from '../guards/roles.guard';
 import { UserService } from '../services/user.service';
 
 @Controller('user')
@@ -28,5 +31,35 @@ export class UserController {
     async register(@Body() user: User): Promise<Result> {
         await this.userService.register(user);
         return { code: 200, message: '注册成功' };
+    }
+
+    @Delete(':id')
+    @Roles('admin')
+    @UseGuards(AuthGuard(), RolesGuard)
+    async remove(@Param() id: number): Promise<Result> {
+        await this.userService.remove(id);
+        return { code: 200, message: '删除用户成功' };
+    }
+
+    @Put(':id')
+    @Roles('admin')
+    @UseGuards(AuthGuard(), RolesGuard)
+    async update(@Param() id: number, updateInput: User): Promise<Result> {
+        await this.userService.update(id, updateInput);
+        return { code: 200, message: '更新用户成功' };
+    }
+
+    @Get(':id')
+    async findOne(@Param() id: number): Promise<Result> {
+        const data = await this.userService.findOneWithPostsById(id);
+        return { code: 200, message: '查询用户成功', data };
+    }
+
+    @Get()
+    @Roles('admin')
+    @UseGuards(AuthGuard(), RolesGuard)
+    async findAll(): Promise<Result> {
+        const data = await this.userService.findAll();
+        return { code: 200, message: '查询所有用户成功', data };
     }
 }
