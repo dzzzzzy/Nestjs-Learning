@@ -6,7 +6,7 @@
 
 ## 框架介绍
 
-Nest 是构建高效，可扩展的 Node.js Web 应用程序的框架。 它使用现代的 JavaScript 或 TypeScript（保留与纯 JavaScript 的兼容性），并结合 OOP（面向对象编程），FP（函数式编程）和 FRP（函数响应式编程）的元素。
+Nest 是构建高效，可扩展的 Node.js Web 应用程序的框架。它使用现代的 JavaScript 或 TypeScript（保留与纯 JavaScript 的兼容性），并结合 OOP（面向对象编程），FP（函数式编程）和 FRP（函数响应式编程）的元素。
 
 在底层，Nest 使用了 [Express](https://github.com/expressjs/express)，但也提供了与其他各种库的兼容，例如 [Fastify](https://github.com/fastify/fastify)，可以方便地使用各种可用的第三方插件。
 
@@ -17,20 +17,16 @@ Nest 是构建高效，可扩展的 Node.js Web 应用程序的框架。 它使�
 - 内置 IOC 容器，大量使用依赖注入，开发更便捷、更高效
 - 轻松编写 AOP 代码，面向切面编程，轻松实现日志、拦截器、过滤器等功能
 - 支持 TypeORM，最好的 Typescript ORM 框架，轻松编写 DAO 层的各类逻辑
-- 轻松构建 MVC、API、websocket、微服务、等系统
+- 轻松构建 MVC、API、websocket、微服务等系统
 - ......
 
 ### 框架 Github 地址: [Nest](https://github.com/nestjs/nest) 🎁
 
 ## 框架文档
 
-[官方文档](https://docs.nestjs.com)
+[官方文档](https://docs.nestjs.com)    [中文文档](https://docs.nestjs.cn)
 
-[中文文档](https://docs.nestjs.cn)
-
-----------
-
-## 相关技术
+## 相关技术文档
 
 - [NodeJS](https://nodejs.org)
   - [v10文档(最新)](https://nodejs.org/dist/latest-v10.x/docs/api/)
@@ -44,8 +40,6 @@ Nest 是构建高效，可扩展的 Node.js Web 应用程序的框架。 它使�
 - [TypeORM](https://github.com/typeorm/typeorm)
   - 📚 [官方文档](http://typeorm.io)
 - ......
-
-----------
 
 ## Nest 学习手册
 
@@ -67,11 +61,13 @@ Nest 是构建高效，可扩展的 Node.js Web 应用程序的框架。 它使�
 - [GraphQL API Demo](./demo/graphql-api/README.md) GraphQL 风格的增删改查示例项目，包含简单的 GraphQL 订阅功能。
 - [easy-post](./demo/easy-post/README.md) 便利贴，包含用户登录注册，用户授权、用户认证、帖子管理、用户管理等功能。
 
+## QQ 交流群
+
+489719517
+
 ## TypeORM 问题汇总
 
 - [分页查询问题](./issues/typeorm/pagination/README.md)
-
-----------
 
 ***TODO***
 
