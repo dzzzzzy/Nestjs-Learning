@@ -49,7 +49,7 @@ Nest 是构建高效，可扩展的 Node.js Web 应用程序的框架。它使�
   - [Module](./docs/module.md)
   - [NestFactory](./docs/nest-factory.md)
 - 高级功能
-  - [Middleware](https://docs.nestjs.com/middleware)
+  - [Middleware](./docs/middleware.md)
   - [Exception Filter](https://docs.nestjs.com/exception-filters)
   - [Pipe](https://docs.nestjs.com/pipes)
   - [Guard](https://docs.nestjs.com/guards)
