@@ -163,10 +163,12 @@ import { Injectable, NestMiddleware, MiddlewareFunction } from '@nestjs/common';
 @Injectable()
 export class LoggerMiddleware implements NestMiddleware {
   async resolve(name: string): Promise<MiddlewareFunction> {
-    // 在返回之前调用异步方法
+    // 这个异步函数会在应用启动时执行，如果你需要在应用启动时动态的改变中间件行为，
+    // 此时可以执行一些异步任务，然后接收其返回值，依据这个返回值去改变中间件行为。
     await someAsyncJob();
 
     // 返回一个异步的中间件函数
+    // 当中间件中，需要等待一些异步函数执行完毕时，需要将中间件函数声明为异步函数
     return async (req, res, next) => {
       await someAsyncJob();
 
@@ -214,6 +216,7 @@ export class ApplicationModule implements NestModule {
 
 ```typescript
 const app = await NestFactory.create(ApplicationModule);
+// 这里必须使用函数中间件
 app.use(logger);
 await app.listen(3000);
 ```
