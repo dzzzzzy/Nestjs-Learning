@@ -62,6 +62,10 @@ export class AppController {
 
     /**
      * 构造函数，用于注入这个类的依赖，注入类时，需要使用 @Inject() 修饰符，其参数是被注入的类的类名
+     *
+     * 在注入被 @Injectable() 修饰的类时，可以不使用 @Inject() 修饰参数，此时依赖注器入会使用参数的类型完成注入
+     *
+     * Tips: 这里我使用 @Inject(AppService) 是为了规格代码风格
      */
     constructor(
         @Inject(AppService) private readonly appService: AppService,
