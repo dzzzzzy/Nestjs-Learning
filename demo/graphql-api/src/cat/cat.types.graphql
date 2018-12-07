@@ -1,6 +1,6 @@
 type Query {
-    # #号代表代码里的注释，" "/""" """是 graphql 文档中的注释，" "是单行，""" """是多行
-    "查询一个猫猫"
+    # #是代码里的注释，""" """是 graphql 文档中的注释
+    """查询一个猫猫"""
     findOneCat(id: Int!): CatResponse
     findCats: CatsResponse
 }
