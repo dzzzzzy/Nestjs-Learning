@@ -13,13 +13,7 @@ import { PubSubFactory } from './pub-sub.provider';
     imports: [
         GraphQLModule.forRoot({
             typePaths: ['./**/*.graphql'],
-            installSubscriptionHandlers: true,
-            playground: {
-                settings: {
-                    'editor.theme': 'light',
-                    'editor.cursorShape': 'line'
-                }
-            }
+            installSubscriptionHandlers: true
         }),
         TypeOrmModule.forRoot(),
         CatModule
