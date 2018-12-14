@@ -8,6 +8,7 @@ import { CryptoUtil } from '../utils/crypto.util';
 @Injectable()
 export class UserService implements OnModuleInit {
     async onModuleInit() {
+        if (await this.findOneByAccount('admin')) return;
         // 初始化系统管理员
         const admin = this.userRepo.create({
             account: 'admin',

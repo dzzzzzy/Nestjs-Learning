@@ -15,7 +15,9 @@ export class PostController {
     ) { }
 
     @Post()
-    async createPost(@Body() createInput: UserPost): Promise<Result> {
+    @UseGuards(AuthGuard())
+    async createPost(@Req() req: any, @Body() createInput: UserPost): Promise<Result> {
+        createInput.user = req.user;
         await this.postService.create(createInput);
         return { code: 200, message: '创建帖子成功' };
     }

@@ -16,7 +16,9 @@ export class User {
     @Column()
     name: string;
 
-    @OneToMany(type => Post, post => post.user)
+    @OneToMany(type => Post, post => post.user, {
+        onDelete: 'CASCADE'
+    })
     posts: Post[];
 
     @Column({
