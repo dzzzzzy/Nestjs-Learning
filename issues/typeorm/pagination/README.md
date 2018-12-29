@@ -11,17 +11,18 @@ const users = await getRepository(User)
     .createQueryBuilder("user")
     .leftJoinAndSelect("user.photos", "photo")
     .take(10)
-    .getMany();
+    .getManyAndCount();
 ```
 
 这将会查询前10条用户及其照片的数据。
 
 ```typescript
+// getManyAndCount 返回一个长度为2的元组，[0] 是分页后的数据数组， [1] 是所有数据总数
 const users = await getRepository(User)
     .createQueryBuilder("user")
     .leftJoinAndSelect("user.photos", "photo")
     .skip(10)
-    .getMany();
+    .getManyAndCount();
 ```
 
 这将会查询除了前10条用户以外的所有人及其照片的数据。
@@ -34,7 +35,7 @@ const users = await getRepository(User)
     .leftJoinAndSelect("user.photos", "photo")
     .skip(5)
     .take(10)
-    .getMany();
+    .getManyAndCount();
 ```
 
 这将会在第6条记录开始查询10条记录，即查询6-16条用户及其照片的数据。

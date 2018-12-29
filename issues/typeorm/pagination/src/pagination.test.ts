@@ -30,12 +30,12 @@ createConnection({
                 ]
         }));
     }
+    // getManyAndCount 返回一个长度为2的元组，[0] 是分页后的数据数组， [1] 是所有数据总数
+    const userInfoWithOL = await userRepo.createQueryBuilder('user').leftJoinAndSelect('user.posts', 'post').offset(3).limit(5).getManyAndCount();
 
-    const userInfoWithOL = await userRepo.createQueryBuilder('user').leftJoinAndSelect('user.posts', 'post').offset(3).limit(5).getMany();
+    const userInfoWithST = await userRepo.createQueryBuilder('user').leftJoinAndSelect('user.posts', 'post').skip(3).take(5).getManyAndCount();
 
-    const userInfoWithST = await userRepo.createQueryBuilder('user').leftJoinAndSelect('user.posts', 'post').skip(3).take(5).getMany();
-
-    const userInfoTableWithOL = userInfoWithOL.map(item => {
+    const userInfoTableWithOL = userInfoWithOL[0].map(item => {
         return {
             id: item.id,
             name: item.name,
@@ -43,7 +43,7 @@ createConnection({
         };
     });
 
-    const userInfoTableWithST = userInfoWithST.map(item => {
+    const userInfoTableWithST = userInfoWithST[0].map(item => {
         return {
             id: item.id,
             name: item.name,
