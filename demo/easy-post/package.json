@@ -14,25 +14,25 @@
     "author": "dzzzzzy",
     "license": "MIT",
     "dependencies": {
-        "@nestjs/common": "^5.3.9",
-        "@nestjs/core": "^5.3.10",
-        "@nestjs/jwt": "^0.2.0",
+        "@nestjs/common": "^5.7.2",
+        "@nestjs/core": "^5.7.2",
+        "@nestjs/jwt": "^0.3.0",
         "@nestjs/passport": "^5.1.0",
-        "@nestjs/typeorm": "^5.2.2",
+        "@nestjs/typeorm": "^5.3.0",
         "passport": "^0.4.0",
         "passport-jwt": "^4.0.0",
-        "pg": "^7.4.3",
-        "reflect-metadata": "^0.1.12",
-        "rxjs": "^6.3.3",
-        "typeorm": "^0.2.7",
-        "typescript": "^3.0.3"
+        "pg": "^7.8.0",
+        "reflect-metadata": "^0.1.13",
+        "rxjs": "^6.4.0",
+        "typeorm": "^0.2.13",
+        "typescript": "^3.3.3"
     },
     "devDependencies": {
-        "@types/node": "^10.11.0",
+        "@types/node": "^11.9.4",
         "@types/passport-jwt": "^3.0.1",
-        "nodemon": "^1.18.4",
-        "ts-node": "^7.0.1",
-        "tsconfig-paths": "^3.6.0",
-        "tslint": "^5.11.0"
+        "nodemon": "^1.18.10",
+        "ts-node": "^8.0.2",
+        "tsconfig-paths": "^3.8.0",
+        "tslint": "^5.12.1"
     }
 }

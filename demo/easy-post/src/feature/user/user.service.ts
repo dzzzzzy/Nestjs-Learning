@@ -2,8 +2,8 @@ import { HttpException, Inject, Injectable, OnModuleInit } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
-import { User } from '../entities/user.entity';
-import { CryptoUtil } from '../utils/crypto.util';
+import { CryptoUtil } from '../../shared/utils/crypto.util';
+import { User } from './user.entity';
 
 @Injectable()
 export class UserService implements OnModuleInit {

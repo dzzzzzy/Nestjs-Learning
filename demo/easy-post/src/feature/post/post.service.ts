@@ -2,7 +2,7 @@ import { HttpException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
-import { Post } from '../entities/post.entity';
+import { Post } from './post.entity';
 
 @Injectable()
 export class PostService {
@@ -59,6 +59,6 @@ export class PostService {
      * @param userId 用户ID
      */
     async findAll(userId: number): Promise<Post[]> {
-        return await this.postRepo.find();
+        return await this.postRepo.find({ where: { user: { id: userId } } });
     }
 }

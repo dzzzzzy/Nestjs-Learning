@@ -1,12 +1,12 @@
 import { Body, Controller, Delete, Get, Inject, Param, Post, Put, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 
-import { AuthService } from '../auth/auth.service';
-import { Result } from '../common/result.interface';
-import { Roles } from '../decorators/roles.decorator';
-import { User } from '../entities/user.entity';
-import { RolesGuard } from '../guards/roles.guard';
-import { UserService } from '../services/user.service';
+import { Roles } from '../../common/decorators/roles.decorator';
+import { Result } from '../../common/interfaces/result.interface';
+import { AuthService } from '../../core/auth/auth.service';
+import { RolesGuard } from '../../core/guards/roles.guard';
+import { User } from './user.entity';
+import { UserService } from './user.service';
 
 @Controller('user')
 export class UserController {

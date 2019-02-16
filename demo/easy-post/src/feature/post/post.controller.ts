@@ -2,11 +2,11 @@ import { Body, Controller, Delete, Get, Inject, Param, Post, Put, Req, UseGuards
 import { AuthGuard } from '@nestjs/passport';
 import { Request } from 'express';
 
-import { Result } from '../common/result.interface';
-import { Roles } from '../decorators/roles.decorator';
-import { Post as UserPost } from '../entities/post.entity';
-import { RolesGuard } from '../guards/roles.guard';
-import { PostService } from '../services/post.service';
+import { Roles } from '../../common/decorators/roles.decorator';
+import { Result } from '../../common/interfaces/result.interface';
+import { RolesGuard } from '../../core/guards/roles.guard';
+import { Post as PostEntity } from './post.entity';
+import { PostService } from './post.service';
 
 @Controller('post')
 export class PostController {
@@ -16,7 +16,7 @@ export class PostController {
 
     @Post()
     @UseGuards(AuthGuard())
-    async createPost(@Req() req: any, @Body() createInput: UserPost): Promise<Result> {
+    async createPost(@Req() req: Request, @Body() createInput: PostEntity): Promise<Result> {
         createInput.user = req.user;
         await this.postService.create(createInput);
         return { code: 200, message: '创建帖子成功' };
@@ -33,7 +33,7 @@ export class PostController {
     @Put(':id')
     @Roles('admin')
     @UseGuards(AuthGuard(), RolesGuard)
-    async update(@Param() id: number, @Body() updateInput: UserPost): Promise<Result> {
+    async update(@Param() id: number, @Body() updateInput: PostEntity): Promise<Result> {
         await this.postService.update(id, updateInput);
         return { code: 200, message: '更新帖子成功' };
     }

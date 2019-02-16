@@ -1,6 +1,6 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
-import { Post } from './post.entity';
+import { Post } from '../post/post.entity';
 
 @Entity('user')
 export class User {
@@ -16,9 +16,7 @@ export class User {
     @Column()
     name: string;
 
-    @OneToMany(type => Post, post => post.user, {
-        onDelete: 'CASCADE'
-    })
+    @OneToMany(type => Post, post => post.user)
     posts: Post[];
 
     @Column({
