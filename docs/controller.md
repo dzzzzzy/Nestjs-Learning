@@ -78,18 +78,21 @@ export class UpdateCatDto {
 
 在定义路由时，方法参数中，我们使用到了 `@Body()`、`@Query()`、`@Param()` 这样的参数注解，他们是什么意思呢？用过 `express` 的同学都会经常接触到：`req`、`res`、`next`、`req.body`、`req.query`、`req.params`等等，诸如此类的特性，下面我们列举出，在 **Nest** 框架中，这些注解与 `express` 中的使用方法是如何对应的：
 
-|Nest|Express|
-|:-----------------------|:-------------------------------|
-|@Request()              |req                             |
-|@Response()             |res                             |
-|@Next()                 |next                            |
-|@Session()              |req.session                     |
-|@Param(param?: string)  |req.params / req.params[param]  |
-|@Body(param?: string)   |req.body / req.body[param]      |
-|@Query(param?: string)  |req.query / req.query[param]    |
-|@Headers(param?: string)|req.headers / req.headers[param]|
+| Nest                     | Express                          |
+| :----------------------- | :------------------------------- |
+| @Request()               | req                              |
+| @Response()              | res                              |
+| @Next()                  | next                             |
+| @Session()               | req.session                      |
+| @Param(param?: string)   | req.params / req.params[param]   |
+| @Body(param?: string)    | req.body / req.body[param]       |
+| @Query(param?: string)   | req.query / req.query[param]     |
+| @Headers(param?: string) | req.headers / req.headers[param] |
 
 > Tips：Nest 底层默认使用了 `express` 作为 web 层的框架
+>
+> 注意：如果在方法参数中定义了 @Res() 或 @Next()，此时该方法的 return 语句会被阻塞，因为 return 形式的返回是 nest 标准形式，而一但使用了上述两个装饰器后，nest 不会在用标准
+形式返回数据，此时必须使用 res.send / res.end / res.json 等，这种 `express` 特定的写法返回数据。
 
 ### 通配符路由
 
