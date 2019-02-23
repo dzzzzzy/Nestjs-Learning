@@ -39,6 +39,7 @@ export class PostController {
     }
 
     @Get()
+    @UseGuards(AuthGuard())
     async findAll(@Req() req: Request): Promise<Result> {
         const data = await this.postService.findAll(req.user.id);
         return { code: 200, message: '查询所有帖子成功', data };

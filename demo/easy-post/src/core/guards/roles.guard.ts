@@ -20,7 +20,7 @@ export class RolesGuard implements CanActivate {
         const request = context.switchToHttp().getRequest();
         const user: User = request.user;
 
-        // 判断是否为管理员，或当前操作的资源是否是私人的
+        // 判断当前请求用户的角色是否为管理员
         const hasRole = () => user.role === 'admin';
         return user && hasRole();
     }
