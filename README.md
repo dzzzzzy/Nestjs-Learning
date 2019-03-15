@@ -45,16 +45,16 @@ Nest 是构建高效，可扩展的 Node.js Web 应用程序的框架。它使�
 ## Nest 学习手册
 
 - 基础功能
-  - [Controller](./docs/controller.md)
-  - [Provider](./docs/provider.md)
-  - [Module](./docs/module.md)
-  - [NestFactory](./docs/nest-factory.md)
+  - [Controller](./docs/controller.md)  控制器
+  - [Provider](./docs/provider.md)  提供者
+  - [Module](./docs/module.md)  模块(核心依赖注入思想)
+  - [NestFactory](./docs/nest-factory.md)   创建 Nest 应用的工厂类
 - 高级功能
-  - [Middleware](./docs/middleware.md)
-  - [Exception Filter](./docs/exception-filter.md)
-  - [Pipe](https://docs.nestjs.com/pipes)
-  - [Guard](https://docs.nestjs.com/guards)
-  - [Interceptor](https://docs.nestjs.com/interceptors)
+  - [Middleware](./docs/middleware.md)  中间件
+  - [Exception Filter](./docs/exception-filter.md)  异常过滤器
+  - [Pipe](https://docs.nestjs.com/pipes)   管道
+  - [Guard](https://docs.nestjs.com/guards) 守卫
+  - [Interceptor](https://docs.nestjs.com/interceptors) 拦截器
 
 ## Demo
 
@@ -65,6 +65,10 @@ Nest 是构建高效，可扩展的 Node.js Web 应用程序的框架。它使�
 ## QQ 交流群
 
 489719517
+
+## nestjs 框架中国开发者社区
+
+社区地址：[github](https://github.com/nest-cn-community)
 
 ## TypeORM 问题汇总
 
