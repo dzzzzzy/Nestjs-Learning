@@ -57,16 +57,19 @@
     path-to-regexp "2.2.1"
     uuid "3.3.2"
 
-"@nestjs/graphql@^5.5.2":
-  version "5.5.2"
-  resolved "https://registry.yarnpkg.com/@nestjs/graphql/-/graphql-5.5.2.tgz#24d756ef0bc210165cd2a327d57bb5cbec3dcea6"
-  integrity sha512-wJ1TG7Q7tzwA3zYRmOsPbjJmn+t9HjRf1csJVLQAZjO8Po3QFsodoS0TpuURhRc/G0ZLxEjfNUQeFvZ18AqzPQ==
+"@nestjs/graphql@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/graphql/-/graphql-6.0.0.tgz#3989244cba2913071645149fe46c73b6b654ccea"
+  integrity sha512-yGc7dCcBCp+VTJPGi8Nw0dmur5Ofil7oHQqJ/XnigoW1KhwLVrzaLUrDe5PnIUCqaCnppBxotKWXJKOKEDZsTg==
   dependencies:
-    glob "^7.1.3"
+    "@types/graphql" "^14.0.7"
+    chokidar "^2.1.1"
+    fast-glob "^2.2.6"
     graphql-tools "^4.0.3"
     lodash "^4.17.11"
     merge-graphql-schemas "^1.5.8"
-    ts-simple-ast "^21.0.0"
+    optional "^0.1.4"
+    ts-morph "^1.1.0"
     uuid "3.3.2"
 
 "@nestjs/typeorm@^6.0.0":
@@ -788,6 +791,25 @@ chokidar@^2.1.0:
   optionalDependencies:
     fsevents "^1.2.7"
 
+chokidar@^2.1.1:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-2.1.2.tgz#9c23ea40b01638439e0513864d362aeacc5ad058"
+  integrity sha512-IwXUx0FXc5ibYmPC2XeEj5mpXoV66sR+t3jqu2NS2GYwCktt3KF1/Qqjws/NkegajBA4RbZ5+DDwlOiJsxDHEg==
+  dependencies:
+    anymatch "^2.0.0"
+    async-each "^1.0.1"
+    braces "^2.3.2"
+    glob-parent "^3.1.0"
+    inherits "^2.0.3"
+    is-binary-path "^1.0.0"
+    is-glob "^4.0.0"
+    normalize-path "^3.0.0"
+    path-is-absolute "^1.0.0"
+    readdirp "^2.2.1"
+    upath "^1.1.0"
+  optionalDependencies:
+    fsevents "^1.2.7"
+
 chownr@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.1.1.tgz#54726b8b8fff4df053c42187e801fb4412df1494"
@@ -1381,7 +1403,7 @@ extglob@^2.0.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-fast-glob@^2.0.2:
+fast-glob@^2.0.2, fast-glob@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-2.2.6.tgz#a5d5b697ec8deda468d85a74035290a025a95295"
   integrity sha512-0BvMaZc1k9F+MeWWMe8pL6YltFzZYcJsYU7D4JyDA6PAczaXvxqQQ/z+mDF7/4Mw01DeUc+i3CTKajnkANkV4w==
@@ -2676,7 +2698,7 @@ once@^1.3.0, once@^1.3.1, once@^1.4.0:
   dependencies:
     wrappy "1"
 
-optional@0.1.4:
+optional@0.1.4, optional@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/optional/-/optional-0.1.4.tgz#cdb1a9bedc737d2025f690ceeb50e049444fd5b3"
   integrity sha512-gtvrrCfkE08wKcgXaVwQVgwEQ8vel2dc5DDBn9RLQZ3YtmtkBss6A2HY6BnJH4N/4Ku97Ri/SF8sNWE2225WJw==
@@ -3579,21 +3601,10 @@ touch@^3.1.0:
   dependencies:
     nopt "~1.0.10"
 
-ts-node@^8.0.2:
-  version "8.0.2"
-  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-8.0.2.tgz#9ecdf8d782a0ca4c80d1d641cbb236af4ac1b756"
-  integrity sha512-MosTrinKmaAcWgO8tqMjMJB22h+sp3Rd1i4fdoWY4mhBDekOwIAKI/bzmRi7IcbCmjquccYg2gcF6NBkLgr0Tw==
-  dependencies:
-    arg "^4.1.0"
-    diff "^3.1.0"
-    make-error "^1.1.1"
-    source-map-support "^0.5.6"
-    yn "^3.0.0"
-
-ts-simple-ast@^21.0.0:
-  version "21.0.4"
-  resolved "https://registry.yarnpkg.com/ts-simple-ast/-/ts-simple-ast-21.0.4.tgz#b1703287fa8c7f5d6a8bfbef47c1c6cc3dd43e0b"
-  integrity sha512-igAAP3SEBeH1V/G+YfRRQdHy+L3SHXlU6bknZg88s0WboFIMpD/ASiU5rsP/ryS99WiTnzbYRy4fGVk0LWrGgw==
+ts-morph@^1.1.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/ts-morph/-/ts-morph-1.3.0.tgz#06cad37a9d12752be1ac3a02ae3a7067c12d7e0d"
+  integrity sha512-hpdsCl5ZtFkhpBaYtFwfXXqtNvOffURzEnCEPptC3xLlZV5nIVmu5x+OfhNa4fd+06VgdgLc9pNYWRFFBALDuw==
   dependencies:
     "@dsherret/to-absolute-glob" "^2.0.2"
     code-block-writer "^7.2.2"
@@ -3604,6 +3615,17 @@ ts-simple-ast@^21.0.0:
     multimatch "^2.1.0"
     tslib "^1.9.0"
     typescript "^3.0.1"
+
+ts-node@^8.0.2:
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-8.0.2.tgz#9ecdf8d782a0ca4c80d1d641cbb236af4ac1b756"
+  integrity sha512-MosTrinKmaAcWgO8tqMjMJB22h+sp3Rd1i4fdoWY4mhBDekOwIAKI/bzmRi7IcbCmjquccYg2gcF6NBkLgr0Tw==
+  dependencies:
+    arg "^4.1.0"
+    diff "^3.1.0"
+    make-error "^1.1.1"
+    source-map-support "^0.5.6"
+    yn "^3.0.0"
 
 tsconfig-paths@^3.8.0:
   version "3.8.0"

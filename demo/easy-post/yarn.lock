@@ -29,10 +29,10 @@
     path-to-regexp "2.2.1"
     uuid "3.3.2"
 
-"@nestjs/jwt@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/jwt/-/jwt-0.3.0.tgz#70b770270403a6f877cfd45d4181eeb7a950df7a"
-  integrity sha512-8MS/fJ2cUByzVvXZpv71cZKPiovmsBgUraeNrTNlFVerAQ+6+uaGqcPnHAftFjnCsZycu+4uSqdS5qHXj5mtgw==
+"@nestjs/jwt@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/jwt/-/jwt-6.0.0.tgz#f220a7ad97327eb76f96ee45b116d63ba4a16d04"
+  integrity sha512-Vq/Y/C+jjNdN510x/HRrjnUjRISvPAtR29JRkKg87lIhcu9K6dXCzgkgJiaIH6ujV0WMg5FE2hMONUbEUBIzUQ==
   dependencies:
     "@types/jsonwebtoken" "7.2.8"
     jsonwebtoken "8.4.0"
