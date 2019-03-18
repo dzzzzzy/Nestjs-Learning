@@ -14,8 +14,8 @@
     "author": "dzzzzzy",
     "license": "MIT",
     "dependencies": {
-        "@nestjs/common": "^5.7.2",
-        "@nestjs/core": "^5.7.2",
+        "@nestjs/common": "^6.0.0",
+        "@nestjs/core": "^6.0.0",
         "@nestjs/typeorm": "^6.0.0",
         "pg": "^7.8.0",
         "reflect-metadata": "^0.1.13",
