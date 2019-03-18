@@ -6,8 +6,8 @@ import { AppModule } from './app.module';
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
 
-    await app.listen(2333, '0.0.0.0', () => {
-        Logger.log('GraphQL IDE started on: http://localhost:2333/graphql');
+    await app.listen(3000, '0.0.0.0', () => {
+        Logger.log('GraphQL api server started on: http://localhost:3000/graphql');
     });
 }
 

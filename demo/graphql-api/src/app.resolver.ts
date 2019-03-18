@@ -4,7 +4,7 @@ import { PubSub } from 'graphql-subscriptions';
 
 import { AppService } from './app.service';
 
-@Resolver()
+@Resolver('app')
 export class AppResolver {
     constructor(
         @Inject(AppService) private readonly appService: AppService,

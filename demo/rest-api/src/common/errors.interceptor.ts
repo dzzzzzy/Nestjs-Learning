@@ -1,11 +1,11 @@
-import { ExecutionContext, HttpException, Injectable, NestInterceptor } from '@nestjs/common';
+import { CallHandler, ExecutionContext, HttpException, Injectable, NestInterceptor } from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class ErrorsInterceptor implements NestInterceptor {
-    intercept(context: ExecutionContext, call$: Observable<any>): Observable<any> {
-        return call$.pipe(catchError((error, caught): any => {
+    intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
+        return next.handle().pipe(catchError((error, caught): any => {
             if (error instanceof HttpException) {
                 return Promise.resolve({
                     code: error.getStatus(),
