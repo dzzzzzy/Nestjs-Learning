@@ -115,6 +115,8 @@ import { AppService } from './app.service';
  * @Module() 定义一个模块，并管理这个模块的导入集合、控制器集合、提供者集合、导出集合
  */
 @Module({
+    // TypeOrmModule.forRoot() 默认加载项目根目录下的 ormconfig.json 配置文件用于配置数据库连接
+    // TypeORM 配置文件详细文档 https://typeorm.io/#/using-ormconfig
     imports: [TypeOrmModule.forRoot(), CatModule],  // 导入其他模块的集合
     controllers: [AppController],  // 当前模块的控制器集合
     providers: [
