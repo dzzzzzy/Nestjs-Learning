@@ -59,7 +59,7 @@ export interface Cat {
 export class CatsController {
 
   constructor(
-    private readonly catsService: CatsSetvice
+    private readonly catsService: CatsService
   ) { }
 
   @Post()
