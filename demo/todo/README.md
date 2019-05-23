@@ -18,7 +18,7 @@
 
 ```json
 GET /auth/token
-user: <用户>
+account: <用户>
 password: <密码>
 ```
 
@@ -39,7 +39,7 @@ POST /users
 Content-Type: application/json
 
 {
-    "user": "<用户>",
+    "account": "<账号>",
     "password": "<密码>"
 }
 ```
