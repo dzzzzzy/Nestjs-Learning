@@ -19,7 +19,7 @@ export class UsersController {
     await this.userService.create(createUserDto)
       .catch((reason: MongoError) => {
         if (reason.code === 11000) {
-          throw new ConflictException('请使用该存在的账号登录', '用户已经存在');
+          throw new ConflictException('请使用该存在的账号', '用户已经存在');
         }
       });
     // 签发 Token
