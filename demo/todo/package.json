@@ -50,7 +50,7 @@
     "jest": "^23.6.0",
     "nodemon": "^1.18.9",
     "prettier": "^1.15.3",
-    "supertest": "^3.4.1",
+    "supertest": "^4.0.0",
     "ts-jest": "^23.10.5",
     "ts-loader": "^6.0.1",
     "ts-node": "^7.0.1",
