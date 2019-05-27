@@ -47,7 +47,7 @@
     "@types/node": "^10.12.18",
     "@types/supertest": "^2.0.7",
     "cz-conventional-changelog": "^2.1.0",
-    "jest": "^23.6.0",
+    "jest": "^24.0.0",
     "nodemon": "^1.18.9",
     "prettier": "^1.15.3",
     "supertest": "^3.4.1",
