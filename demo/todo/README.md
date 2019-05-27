@@ -5,8 +5,24 @@
 ## 目录说明
 
 - `/src/common` 公用的模块
-
 - `/src/feature ` 业务模块
+
+## 使用说明
+
+```
+# 打开项目目录
+cd todo
+
+# 安装依赖
+$ npm i
+
+# 创建 todo-mongo
+# 如果不会 docker ，可以按照自己的方法，自行创建数据库
+$ docker run --name todo-mongo -d -p 27017:27017 mongo:4.0.9
+
+# 启动应用
+$ npm run start
+```
 
 
 ## `RESTful APIs`
@@ -93,8 +109,8 @@ Content-Type: application/json
 Authorization: Bearer <token>
 
 {
-    "complete":? <true | false>,
-    "todo":? "<待办事项内容>"
+    "complete"?: <true | false>,
+    "todo"?: "<待办事项内容>"
 }
 ```
 
