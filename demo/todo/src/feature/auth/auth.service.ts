@@ -15,7 +15,11 @@ export class AuthService {
     return this.jwtService.sign(payload);
   }
 
-  async validateUser(payload: JwtPayload): Promise<boolean> {
-    return await this.usersService.hasUser(payload.account);
+  async validateUser(payload: JwtPayload): Promise<string> {
+    if (await this.usersService.hasUser(payload.account)) {
+      return payload.account;
+    } else {
+      return null;
+    }
   }
 }

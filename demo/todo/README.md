@@ -1,13 +1,12 @@
 # `Todo`
 
-待办事项 `RESTful APIs` ，技术上使用 `JWT` 、`MongoDB` 、`Typeorm` ，功能上实现注册、登录、待办事项增删改查
+待办事项 `RESTful APIs` ，技术上使用 `JWT` 、`MongoDB` 、`Mongoose` ，功能上实现注册、登录、待办事项增删改查
 
 ## 目录说明
 
-- `/src/common` 公共的 `interface`、`decorators`
+- `/src/common` 公用的模块
 
-- `/src/core` 核心的 `guards`
-- `/src/feature ` 业务功能
+- `/src/feature ` 业务模块
 
 
 ## `RESTful APIs`
@@ -71,14 +70,14 @@ Authorization: Bearer <token>
 200 OK
 
 {
-    "id": "<待办事项的id>"
+    "_id": "<待办事项的_id>"
 }
 ```
 
 #### 删除一个待办事项
 
 ```json
-DELETE /todos/:id
+DELETE /todos/:_id
 Authorization: Bearer <token>
 ```
 
@@ -89,7 +88,7 @@ Authorization: Bearer <token>
 #### 改变一个待办事项
 
 ```json
-PATCH /todos/:id
+PATCH /todos/:_id
 Content-Type: application/json
 Authorization: Bearer <token>
 
@@ -113,12 +112,10 @@ Authorization: Bearer <token>
 ```json
 200 OK
 
-{
-	"todos": [
-        { "complete": <true | false>, "todo": "<待办事项内容>" },
-        { "complete": <true | false>, "todo": "<待办事项内容>" },
-        ...
-    ]
-}
+[
+    { _id: "<待办事项_id>", "complete": <true | false>, "todo": "<待办事项内容>" },
+    { _id: "<待办事项_id>", "complete": <true | false>, "todo": "<待办事项内容>" },
+    ...
+]
 ```
 
