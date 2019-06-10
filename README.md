@@ -29,7 +29,7 @@ Nest 是构建高效，可扩展的 Node.js Web 应用程序的框架。它使�
 ## 相关技术文档
 
 - [NodeJS](https://nodejs.org)
-  - [v11文档(最新)](https://nodejs.org/dist/latest-v11.x/docs/api/)
+  - [v12文档(最新)](https://nodejs.org/dist/latest-v12.x/docs/api/)
 - [Typescript](https://www.typescriptlang.org)
   - 📚 [官方文档](https://www.typescriptlang.org/docs/home.html)
   - 📚 [中文文档](https://www.tslang.cn/docs/home.html)
@@ -43,6 +43,8 @@ Nest 是构建高效，可扩展的 Node.js Web 应用程序的框架。它使�
 - ......
 
 ## Nest 学习手册
+
+> 由于官方文档更新较为频繁，推荐大家尽可能的查阅[官方文档](https://docs.nestjs.com)进行学习
 
 - 基础功能
   - [Controller](./docs/controller.md)  控制器

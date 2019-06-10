@@ -17,38 +17,36 @@ Middleware 即中间件，他是请求发出者和路由处理器之间的桥梁
 Nest 中间件可以是一个函数，也可以是一个带有 `@Injectable()` 装饰器的类，且该类应该实现 `NestMiddleware` 接口，而函数没有任何特殊要求。如下是一个日志中间件的简单示例：
 
 ```typescript
-import { Injectable, NestMiddleware, MiddlewareFunction } from '@nestjs/common';
+import { Injectable, NestMiddleware } from '@nestjs/common';
+import { Request, Response } from 'express';
 
 @Injectable()
 export class LoggerMiddleware implements NestMiddleware {
-  resolve(...args: any[]): MiddlewareFunction {
-    return (req, res, next) => {
-      console.log('Request...');
-      next();
-    };
+  use(req: Request, res: Response, next: Function) {
+    console.log('Request...');
+    next();
   }
 }
 ```
-
-`resolve()` 方法必须返回一个常规的、特定于库的(这里指express)中间件函数，例如：`(req, res, next) => any`。
 
 ## 中间件中的依赖注入
 
 谈到中间件，也不例外。与提供者（Provider）和控制器（Controller）一样，他能够通过构造函数注入属于同一模块的依赖项：
 
 ```typescript
+import { Injectable, Inject, NestMiddleware } from '@nestjs/common';
+import { Request, Response } from 'express';
+
 @Injectable()
 export class SomeMiddleware implements NestMiddleware {
   constructor(@Inject(SomeService) private readonly someService: SomeService) {}
 
-  resolve(...args: any[]): MiddlewareFunction {
-    return (req, res, next) => {
-      // do some logic...
-      this.someService.method();
+  use(req: Request, res: Response, next: Function) {
+    // do some logic...
+    this.someService.method();
 
-      console.log('Request...');
-      next();
-    };
+    console.log('Request...');
+    next();
   }
 }
 ```
@@ -107,75 +105,6 @@ export class ApplicationModule implements NestModule {
       )
       .forRoutes(CatsController);
   }
-}
-```
-
-## 可配置的中间件
-
-什么是可配置的中间件？ 当我们希望向中间件传入不同的参数来让他体现不同的行为时，可配置的中间件就可以满足我们的需求：
-
->app.module.ts
-
-```typescript
-import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
-import { LoggerMiddleware } from './common/middlewares/logger.middleware';
-import { CatsModule } from './cats/cats.module';
-import { CatsController } from './cats/cats.controller';
-
-@Module({
-  imports: [CatsModule],
-})
-export class ApplicationModule implements NestModule {
-  configure(consumer: MiddlewareConsumer) {
-    consumer
-      .apply(LoggerMiddleware)
-      .with('ApplicationModule')
-      .forRoutes(CatsController);
-  }
-}
-```
-
-使用 `with()` 方法，传入参数，即可在中间件的 `resolve()` 方法中接收这个参数。
-
->logger.middleware.ts
-
-```typescript
-import { Injectable, NestMiddleware, MiddlewareFunction } from '@nestjs/common';
-
-@Injectable()
-export class LoggerMiddleware implements NestMiddleware {
-  resolve(name: string): MiddlewareFunction {
-    return (req, res, next) => {
-      console.log(`[${name}] Request...`); // [ApplicationModule] Request...
-      next();
-    };
- }
-}
-```
-
-## 异步中间件
-
-异步中间件也称为延迟中间件，当我们需要在中间件中执行一些异步方法且需要等待他们执行完成之后才调用下一个中间件时，使用异步中间件：
-
-```typescript
-import { Injectable, NestMiddleware, MiddlewareFunction } from '@nestjs/common';
-
-@Injectable()
-export class LoggerMiddleware implements NestMiddleware {
-  async resolve(name: string): Promise<MiddlewareFunction> {
-    // 这个异步函数会在应用启动时执行，如果你需要在应用启动时动态的改变中间件行为，
-    // 此时可以执行一些异步任务，然后接收其返回值，依据这个返回值去改变中间件行为。
-    await someAsyncJob();
-
-    // 返回一个异步的中间件函数
-    // 当中间件中，需要等待一些异步函数执行完毕时，需要将中间件函数声明为异步函数
-    return async (req, res, next) => {
-      await someAsyncJob();
-
-      console.log('Request...');
-      next();
-    };
- }
 }
 ```
 
