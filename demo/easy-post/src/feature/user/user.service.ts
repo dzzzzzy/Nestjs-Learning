@@ -2,7 +2,7 @@ import { HttpException, Inject, Injectable, OnModuleInit } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
-import { CryptoUtil } from '../../shared/utils/crypto.util';
+import { CryptoUtil } from '../../common/utils/crypto.util';
 import { User } from './user.entity';
 
 @Injectable()

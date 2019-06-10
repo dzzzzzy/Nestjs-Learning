@@ -2,8 +2,8 @@ import { forwardRef, Module } from '@nestjs/common';
 import { PassportModule } from '@nestjs/passport';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
+import { CommonModule } from '../../common/common.module';
 import { AuthModule } from '../../core/auth/auth.module';
-import { SharedModule } from '../../shared/shared.module';
 import { UserController } from './user.controller';
 import { User } from './user.entity';
 import { UserService } from './user.service';
@@ -14,7 +14,7 @@ import { UserService } from './user.service';
         PassportModule.register({ defaultStrategy: 'jwt' }),
         TypeOrmModule.forFeature([User]),
         forwardRef(() => AuthModule),   // 处理模块间的循环依赖
-        SharedModule
+        CommonModule
     ],
     providers: [UserService],
     controllers: [UserController],
