@@ -24,8 +24,6 @@ export class AppResolver {
 
     @Subscription('subMessage')
     subMessage() {
-        return {
-            subscribe: () => this.pubSub.asyncIterator('subMessage')
-        };
+        return this.pubSub.asyncIterator('subMessage');
     }
 }
