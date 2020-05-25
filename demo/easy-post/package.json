@@ -22,7 +22,7 @@
         "@nestjs/typeorm": "^7.0.0",
         "passport": "^0.4.0",
         "passport-jwt": "^4.0.0",
-        "pg": "^7.9.0",
+        "pg": "^8.0.0",
         "reflect-metadata": "^0.1.13",
         "rxjs": "^6.5.2",
         "typeorm": "^0.2.15",
