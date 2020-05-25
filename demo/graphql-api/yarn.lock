@@ -93,12 +93,12 @@
     express "4.17.1"
     multer "1.4.2"
 
-"@nestjs/typeorm@^6.0.0":
-  version "6.1.3"
-  resolved "https://registry.npm.taobao.org/@nestjs/typeorm/download/@nestjs/typeorm-6.1.3.tgz#1b19db4240bfc44c75e2f5840cf103fcf1468890"
-  integrity sha1-GxnbQkC/xEx14vWEDPED/PFGiJA=
+"@nestjs/typeorm@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/typeorm/-/typeorm-7.0.0.tgz#0993a949bba81756317e8e865882184bd7f16133"
+  integrity sha512-oIiQRihMVNQPE6PzEaB7UDfGlktCtkHNxI2HeSf/Uyrjl7DspPSHNLg9IVVSztk+L9kJquYMXhzApr2PxoK3EQ==
   dependencies:
-    uuid "3.3.2"
+    uuid "7.0.2"
 
 "@nodelib/fs.scandir@2.1.1":
   version "2.1.1"
