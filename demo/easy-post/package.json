@@ -16,7 +16,7 @@
     "dependencies": {
         "@nestjs/common": "^6.5.3",
         "@nestjs/core": "^6.5.3",
-        "@nestjs/jwt": "^6.1.1",
+        "@nestjs/jwt": "^7.0.0",
         "@nestjs/passport": "^7.0.0",
         "@nestjs/platform-express": "^6.5.3",
         "@nestjs/typeorm": "^7.0.0",
