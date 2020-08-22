@@ -29,6 +29,6 @@
         "nodemon": "^1.18.10",
         "ts-node": "^8.0.3",
         "tsconfig-paths": "^3.8.0",
-        "tslint": "^5.14.0"
+        "tslint": "^6.0.0"
     }
 }
