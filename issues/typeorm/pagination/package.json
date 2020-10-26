@@ -11,7 +11,7 @@
   "dependencies": {
     "pg": "^7.4.3",
     "typeorm": "^0.2.18",
-    "typescript": "^3.0.1"
+    "typescript": "^4.0.0"
   },
   "devDependencies": {
     "@types/node": "^10.5.7",
