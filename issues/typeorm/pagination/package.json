@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "pg": "^7.4.3",
-    "typeorm": "^0.2.18",
+    "typeorm": "^0.2.25",
     "typescript": "^3.0.1"
   },
   "devDependencies": {
