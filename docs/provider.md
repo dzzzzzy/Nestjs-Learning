@@ -1,6 +1,6 @@
 # Nest 基础功能 —— Provider
 
-什么是 `Provider`？ 语义化翻译就是 **提供者**，在 `Nest` 中，除了控制器以外，几乎所有的东西都可以被视为提供者 —— `service`、`repository`、`factory`、`helper` 等等。他们都可以通过构造函数注入依赖关系，也就是说，他们可以彼此创建各种关系。但是事实上，提供者只不过是一个用 `@Injectable()` 注解的简单类。
+什么是 `Provider`？ 语义化翻译就是 **提供者**，在 `Nest` 中，除了控制器以外，几乎所有的东西都可以被视为提供者 —— `service`、`repository`、`factory`、`helper` 等等。他们都可以通过构造函数注入依赖关系，也就是说，他们可以彼此创建各种关系。但是事实上，提供者只不过是一个用 `@Injectable()` 装饰的简单类。
 
 在上一节中，我们构建了一个简单的 `CatsController`。控制器应处理HTTP请求，并将更复杂的任务委托给 **service**。
 
@@ -8,7 +8,7 @@
 
 ## 如何将类定义为提供者？
 
-在类声明上，定义 `@Injectable()` 注解，即可将该类定义为提供者。现在，让我们为 `CatsController` 编写一个提供者，他提供了一些方法，用于处理复杂的业务逻辑：
+在类声明上，定义 `@Injectable()` 装饰器，即可将该类定义为提供者。现在，让我们为 `CatsController` 编写一个提供者，他提供了一些方法，用于处理复杂的业务逻辑：
 
 ```typescript
 import { Injectable } from '@nestjs/common';

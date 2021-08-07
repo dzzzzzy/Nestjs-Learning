@@ -6,7 +6,7 @@
 
 ## 如何将类定义为控制器？
 
-在类声明上，定义 `@Controller()` 注解，即可将该类定义为控制器，在 `Nest` 中，几乎所有的注解都是以方法形式存在的，我们通过查看 `@Controller()` 注解的源码：
+在类声明上，定义 `@Controller()` 装饰器，即可将该类定义为控制器，在 `Nest` 中，几乎所有的装饰器都是以方法形式存在的，我们通过查看 `@Controller()` 装饰器的源码：
 
 ```typescript
 export function Controller(prefix?: string): ClassDecorator {
@@ -17,7 +17,7 @@ export function Controller(prefix?: string): ClassDecorator {
 }
 ```
 
-可以看出，控制器注解有一个可选的方法参数，该参数默认值为 `/`，其作用就是定义当前控制器类下所有路由方法的前缀，这样以来，就可以避免我们在定义路由时出现多余的相同前缀。
+可以看出，控制器装饰器有一个可选的方法参数，该参数默认值为 `/`，其作用就是定义当前控制器类下所有路由方法的前缀，这样以来，就可以避免我们在定义路由时出现多余的相同前缀。
 
 现在，让我们定义一个前缀为 `cats` 的控制器：
 
@@ -30,7 +30,7 @@ export class CatsController { }
 
 ## 如何在类的方法上定义路由？
 
-在类的方法声明上，定义 `@Get()`、`@Post()`、`@Put()`、`@Patch()`、`@Delete()`、`@Options()`、`@Head()`、`@All()`。这些注解都表示各自的 **HTTP** 请求方法。
+在类的方法声明上，定义 `@Get()`、`@Post()`、`@Put()`、`@Patch()`、`@Delete()`、`@Options()`、`@Head()`、`@All()`。这些装饰器都表示各自的 **HTTP** 请求方法。
 
 现在，让我们在上述的 `CatsController` 类中定义实际开发中常用的几种路由映射：
 
@@ -76,7 +76,7 @@ export class UpdateCatDto {
 }
 ```
 
-在定义路由时，方法参数中，我们使用到了 `@Body()`、`@Query()`、`@Param()` 这样的参数注解，他们是什么意思呢？用过 `express` 的同学都会经常接触到：`req`、`res`、`next`、`req.body`、`req.query`、`req.params`等等，诸如此类的特性，下面我们列举出，在 **Nest** 框架中，这些注解与 `express` 中的使用方法是如何对应的：
+在定义路由时，方法参数中，我们使用到了 `@Body()`、`@Query()`、`@Param()` 这样的参数装饰器，他们是什么意思呢？用过 `express` 的同学都会经常接触到：`req`、`res`、`next`、`req.body`、`req.query`、`req.params`等等，诸如此类的特性，下面我们列举出，在 **Nest** 框架中，这些装饰器与 `express` 中的使用方法是如何对应的：
 
 | Nest                     | Express                          |
 | :----------------------- | :------------------------------- |
@@ -109,7 +109,7 @@ async findAll() {
 
 ### 状态码(Status code)
 
-如上所述，默认情况下，除 POST 请求的状态码是 **201** 以外，其余请求的状态码总是 **200**，但我们可以通过在方法声明上添加 `@HttpCode(...)` 注解来改变默认的状态码：
+如上所述，默认情况下，除 POST 请求的状态码是 **201** 以外，其余请求的状态码总是 **200**，但我们可以通过在方法声明上添加 `@HttpCode(...)` 装饰器来改变默认的状态码：
 
 ```typescript
 @Post()
@@ -121,7 +121,7 @@ async create() {
 
 ### 响应头(Headers)
 
-若要指定自定义响应头，可以使用 `@Header()` 注解：
+若要指定自定义响应头，可以使用 `@Header()` 装饰器：
 
 ```typescript
 @Post()
