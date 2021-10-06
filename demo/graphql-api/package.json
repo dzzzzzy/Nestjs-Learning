@@ -27,7 +27,7 @@
         "reflect-metadata": "^0.1.13",
         "rxjs": "^6.4.0",
         "subscriptions-transport-ws": "^0.9.16",
-        "typeorm": "^0.2.15",
+        "typeorm": "^0.2.25",
         "typescript": "^3.3.3333"
     },
     "devDependencies": {
