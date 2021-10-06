@@ -24,7 +24,7 @@
         "passport-jwt": "^4.0.0",
         "pg": "^7.9.0",
         "reflect-metadata": "^0.1.13",
-        "rxjs": "^6.5.2",
+        "rxjs": "^7.0.0",
         "typeorm": "^0.2.15",
         "typescript": "^3.5.3"
     },
