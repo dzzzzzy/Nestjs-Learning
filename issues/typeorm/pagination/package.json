@@ -9,7 +9,7 @@
   "author": "dzzzzzy",
   "license": "MIT",
   "dependencies": {
-    "pg": "^7.4.3",
+    "pg": "^8.0.0",
     "typeorm": "^0.2.18",
     "typescript": "^3.0.1"
   },
