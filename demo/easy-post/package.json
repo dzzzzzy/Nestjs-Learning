@@ -20,7 +20,7 @@
         "@nestjs/passport": "^7.0.0",
         "@nestjs/platform-express": "^6.5.3",
         "@nestjs/typeorm": "^7.0.0",
-        "passport": "^0.4.0",
+        "passport": "^0.5.0",
         "passport-jwt": "^4.0.0",
         "pg": "^7.9.0",
         "reflect-metadata": "^0.1.13",
