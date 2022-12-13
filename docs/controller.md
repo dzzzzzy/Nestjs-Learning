@@ -35,7 +35,7 @@ export class CatsController { }
 现在，让我们在上述的 `CatsController` 类中定义实际开发中常用的几种路由映射：
 
 ```typescript
-import { Controller, Get, Post, Body, Put, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put, Param, Delete, Query } from '@nestjs/common';
 
 @Controller('cats')
 export class CatsController {
